@@ -83,3 +83,37 @@
     <script src="scripts.js"></script>
 </body>
 </html>
+
+<script>
+    const images = document.querySelectorAll(".gallery-item");
+    const modal = document.getElementById("image-modal");
+    const modalImage = document.getElementById("modal-image");
+    const closeModal = document.querySelector(".close");
+    let currentImageIndex = 0;
+
+    images.forEach((img, index) => {
+        img.addEventListener("click", () => {
+            modal.style.display = "block";
+            modalImage.src = img.src;
+            currentImageIndex = index;
+        });
+    });
+
+
+    closeModal.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+
+    nextBtn.addEventListener("click", () => {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        modalImage.src = images[currentImageIndex].src;
+    });
+
+
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+</script>
