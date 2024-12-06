@@ -284,3 +284,17 @@ footer {
         transform: translateY(0);
     }
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    opacity: 5;
+    transition: opacity 5s ease-in-out;
+}
+
+section.active {
+    opacity: 5;
+}
+
